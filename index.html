@@ -1,80 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>~/terminal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>terminal</title>
   <style>
     html, body {
       margin: 0;
+      padding: 0;
       background-color: #161616;
       color: #ffffff;
       font-family: monospace;
-      font-size: 14px;
+      font-size: 16px;
       height: 100%;
       overflow: hidden;
     }
+
     #terminal {
-      padding: 1em;
+      padding: 24px;
+      line-height: 1.6;
       white-space: pre-wrap;
     }
-    .input-line {
-      display: flex;
+
+    .prompt::after {
+      content: "_";
+      animation: blink 1s steps(2, start) infinite;
+      margin-left: 4px;
     }
-    .input-line span {
-      margin-right: 0.4em;
+
+    @keyframes blink {
+      to {
+        visibility: hidden;
+      }
     }
-    input {
-      background: transparent;
-      border: none;
+
+    .command {
+      color: #00ff90;
+    }
+
+    .output {
       color: #ffffff;
-      outline: none;
-      font-family: monospace;
-      flex: 1;
+    }
+
+    .userbar {
+      display: inline-block;
+      margin-bottom: 4px;
+      padding: 2px 6px;
+      background-color: #1e1e1e;
+      color: #888;
+      font-weight: bold;
+    }
+
+    .hostname {
+      color: #aaa;
     }
   </style>
 </head>
 <body>
   <div id="terminal">
-    welcome
-    type `help` to begin  
-    <br>
+    <div class="userbar">user@github</div>
+
+    <div><span class="hostname">user@github</span>:~$ <span class="command">whoami</span></div>
+    <div class="output">saph</div>
+
+    <div><span class="hostname">user@github</span>:~$ <span class="command">about</span></div>
+    <div class="output">hi</div>
+
+    <div><span class="hostname">user@github</span>:~$ <span class="prompt"></span></div>
   </div>
-
-  <div class="input-line">
-    <span>$</span>
-    <input type="text" id="commandInput" autofocus />
-  </div>
-
-  <script>
-    const terminal = document.getElementById('terminal')
-    const input = document.getElementById('commandInput')
-
-    const commands = {
-      help: 'available: about, projects, github, clear',
-      about: 'just code',
-      projects: '- passman\n- rshell\n- termdash\n- tabsy',
-      github: 'https://github.com/saphingus',
-      clear: 'clear'
-    }
-
-    input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        const cmd = input.value.trim().toLowerCase()
-        terminal.innerHTML += '\n$ ' + cmd
-        if (commands[cmd]) {
-          if (cmd === 'clear') {
-            terminal.innerHTML = ''
-          } else {
-            terminal.innerHTML += '\n' + commands[cmd]
-          }
-        } else {
-          terminal.innerHTML += '\nunknown command'
-        }
-        input.value = ''
-        window.scrollTo(0, document.body.scrollHeight)
-      }
-    })
-  </script>
 </body>
 </html>

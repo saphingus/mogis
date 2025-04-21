@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>terminal</title>
+  <title>ASCII Terminal</title>
   <style>
     html, body {
       margin: 0;
@@ -11,15 +11,15 @@
       background-color: #161616;
       color: #ffffff;
       font-family: monospace;
-      font-size: 16px;
+      font-size: 14px;
       height: 100%;
       overflow: hidden;
     }
 
     #terminal {
-      padding: 24px;
-      line-height: 1.6;
+      padding: 20px;
       white-space: pre-wrap;
+      line-height: 1.4;
     }
 
     .prompt::after {
@@ -34,6 +34,11 @@
       }
     }
 
+    .ascii {
+      font-size: 18px;
+      color: #ffffff;
+    }
+
     .command {
       color: #00ff90;
     }
@@ -43,16 +48,8 @@
     }
 
     .userbar {
-      display: inline-block;
-      margin-bottom: 4px;
-      padding: 2px 6px;
-      background-color: #1e1e1e;
+      margin-bottom: 10px;
       color: #888;
-      font-weight: bold;
-    }
-
-    .hostname {
-      color: #aaa;
     }
   </style>
 </head>
@@ -60,13 +57,23 @@
   <div id="terminal">
     <div class="userbar">user@github</div>
 
-    <div><span class="hostname">user@github</span>:~$ <span class="command">whoami</span></div>
+    <div class="ascii">
+      _<br>
+     (_) <br>
+     _ .--..--.   .--.   .--./) __   .--.   <br>
+    [ `.-. .-. |/ .'`\ \/ /'`\;[  | ( (`\]  <br>
+     | | | | | || \__. |\ \._// | |  `'.'.  <br>
+    [___||__||__]'.__.' .',__` [___][\__) ) <br>
+                      ( ( __)) <br>
+    </div>
+
+    <div><span class="command">whoami</span></div>
     <div class="output">saph</div>
 
-    <div><span class="hostname">user@github</span>:~$ <span class="command">about</span></div>
-    <div class="output">hi</div>
+    <div><span class="command">about</span></div>
+    <div class="output">simple, minimal, ascii-inspired terminal page</div>
 
-    <div><span class="hostname">user@github</span>:~$ <span class="prompt"></span></div>
+    <div><span class="prompt"></span></div>
   </div>
 </body>
 </html>

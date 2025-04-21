@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASCII Website</title>
+  <title>Mogis</title>
   <style>
     html, body {
       margin: 0;
@@ -11,80 +11,35 @@
       height: 100%;
       background-color: #161616; /* Dark grey background */
       color: #ffffff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Skinny font */
-      font-weight: 400;
+      font-family: monospace; /* Monospaced font for ASCII */
+      font-size: 16px;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       text-align: center;
       overflow: hidden;
     }
 
-    #content {
-      text-align: center;
-      padding: 20px;
-      width: 100%;
-    }
-
-    .ascii {
-      font-size: 12px; /* Smaller ASCII Art */
+    /* Center the ASCII art at the top */
+    pre {
+      margin-top: 20px;
+      padding: 0;
+      font-size: 32px;
+      line-height: 1.2;
       white-space: pre-wrap;
-      line-height: 1.4;
-      color: #00ff90; /* Neon green */
-      margin-bottom: 20px;
-      display: block;
-      text-align: center;
     }
-
-    .links {
-      margin-top: 40px;
-    }
-
-    .links a {
-      text-decoration: none;
-      color: #00ff90;
-      margin: 10px;
-      font-size: 16px;
-      font-weight: 400;
-      letter-spacing: 1px;
-    }
-
-    .links a:hover {
-      color: #ffffff;
-    }
-
-    .userbar {
-      margin-bottom: 20px;
-      font-size: 16px;
-      color: #00ff90;
-      font-weight: 400;
-    }
-
   </style>
 </head>
 <body>
-  <div id="content">
-    <!-- ASCII Art Header -->
-    <div class="ascii">
-      _<br>
-     (_) <br>
-     _ .--..--.   .--.   .--./) __   .--.   <br>
-    [ `.-. .-. |/ .'`\ \/ /'`\;[  | ( (`\]  <br>
-     | | | | | || \__. |\ \._// | |  `'.'.  <br>
-    [___||__||__]'.__.' .',__` [___][\__) ) <br>
-                      ( ( __)) <br>
-    </div>
-
-    <!-- User Bar -->
-    <div class="userbar">user@mogis ~</div>
-
-    <!-- Navigation Links -->
-    <div class="links">
-      <a href="#">projects</a>
-      <a href="#">about</a>
-      <a href="#">contact</a>
-    </div>
-  </div>
+  <pre>
+   _       
+  (_)      
+ _ .--..--.   .--.   .--./) __   .--.   
+[ `.-. .-. |/ .'`\ \/ /'`\;[  | ( (`\]  
+ | | | | | || \__. |\ \._// | |  `'.'.  
+[___||__||__]'.__.' .',__` [___][\__) ) 
+                   ( ( __))              
+  </pre>
 </body>
 </html>

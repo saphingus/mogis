@@ -3,25 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>passman</title>
+  <title>about me - passman</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: #161616; /* dark grey background */
+      background-color: #161616;
       color: #ffffff;
-      font-family: monospace; /* monospaced font for ascii */
-      font-size: 14px; /* smaller font for the ascii */
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       text-align: center;
-      overflow: hidden;
+      overflow-x: hidden;
+      line-height: 1.5;
     }
 
-    /* center the ascii art at the top */
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin-top: 40px;
+    }
+
+    h1, h2 {
+      margin: 0;
+      color: #ffffff;
+      font-weight: normal;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #aaaaaa;
+      margin-bottom: 10px;
+    }
+
+    p, ul {
+      font-size: 14px;
+      color: #dddddd;
+      margin: 10px 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #00aaff;
+    }
+
+    .ascii-art {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      line-height: 1.1;
+    }
+
+    .box {
+      margin-bottom: 25px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+    }
+
+    /* Center the ASCII art at the top */
     pre {
       margin-top: 20px;
       padding: 0;
@@ -32,27 +92,44 @@
   </style>
 </head>
 <body>
-  <pre>
+
+  <div class="container">
+    <div class="box">
+      <h1>about me</h1>
+      <p>hi, i'm saph, a software developer focused on privacy and security, i work primarily with ruby i enjoy creating tools that help users stay secure and anonymous in the wired</p>
+    </div>
+
+    <div class="box">
+      <h2>skills</h2>
+      <ul>
+        <li>ruby</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>projects</h2>
+      <ul>
+        <li><strong>passman</strong> - a lightweight, local password manager using aes-256 encryption</li>
+      </ul>
+    </div>
+
+    <div class="box social-links">
+      <h2>social</h2>
+      <p>follow me:</p>
+      <a href="https://www.youtube.com/@saphingus" target="_blank">ytb</a>
+    </div>
+
+    <div class="box ascii-art">
+      <h2>ascii art</h2>
+      <pre>
 • ▌ ▄ ·.        ▄▄ • ▪  .▄▄ · 
 ·██ ▐███▪▪     ▐█ ▀ ▪██ ▐█ ▀. 
 ▐█ ▌▐▌▐█· ▄█▀▄ ▄█ ▀█▄▐█·▄▀▀▀█▄
 ██ ██▌▐█▌▐█▌.▐▌▐█▄▪▐█▐█▌▐█▄▪▐█
 ▀▀  █▪▀▀▀ ▀█▄▀▪·▀▀▀▀ ▀▀▀ ▀▀▀▀  
-  </pre>
-  <h1>passman - local password manager</h1>
-  <p><strong>passman</strong> is a lightweight, local password manager built in ruby. it is designed to securely store your passwords using aes-256 encryption, ensuring your sensitive information stays safe and private. unlike cloud-based password managers, <strong>passman</strong> keeps all data stored locally on your machine, giving you full control over your passwords.</p>
+      </pre>
+    </div>
+  </div>
 
-  <h2>features:</h2>
-  <ul>
-    <li><strong>local storage</strong>: all passwords are stored locally in an encrypted file.</li>
-    <li><strong>encryption</strong>: aes-256 encryption ensures the security of your passwords.</li>
-    <li><strong>no cloud</strong>: data is never uploaded to any server, keeping everything on your local machine.</li>
-    <li><strong>password management</strong>: add, edit, and delete passwords with ease.</li>
-    <li><strong>password generation</strong>: generate strong passwords to enhance security.</li>
-    <li><strong>secure retrieval</strong>: access your stored passwords with a master password.</li>
-  </ul>
-
-  <p><strong>passman</strong> is ideal for anyone who wants a simple and secure password manager without relying on cloud services. it's designed for privacy-conscious users who prefer a lightweight solution that can be fully controlled locally.</p>
 </body>
 </html>
-

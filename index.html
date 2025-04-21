@@ -2,56 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>tabsy</title>
+  <title>~/terminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
       margin: 0;
-      padding: 0;
-      background: #161616;
+      background-color: #161616;
       color: #ffffff;
       font-family: monospace;
       font-size: 14px;
       height: 100%;
       overflow: hidden;
     }
-    #net {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: lowercase;
+    #terminal {
+      padding: 1em;
+      white-space: pre-wrap;
     }
-    .box {
-      background: rgba(22,22,22,0.8);
-      padding: 10px 20px;
-      border: 1px solid #333;
-      border-radius: 0;
+    .input-line {
+      display: flex;
+    }
+    .input-line span {
+      margin-right: 0.4em;
+    }
+    input {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      outline: none;
+      font-family: monospace;
+      flex: 1;
     }
   </style>
 </head>
 <body>
-  <div id="net">
-    <div class="box">hi</div>
+  <div id="terminal">
+    welcome
+    type `help` to begin  
+    <br>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <div class="input-line">
+    <span>$</span>
+    <input type="text" id="commandInput" autofocus />
+  </div>
+
   <script>
-    VANTA.NET({
-      el: "#net",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0xffffff,
-      backgroundColor: 0x161616,
-      points: 20.00,
-      maxDistance: 27.00,
-      spacing: 20.00
+    const terminal = document.getElementById('terminal')
+    const input = document.getElementById('commandInput')
+
+    const commands = {
+      help: 'available: about, projects, github, clear',
+      about: 'just code',
+      projects: '- passman\n- rshell\n- termdash\n- tabsy',
+      github: 'https://github.com/saphingus',
+      clear: 'clear'
+    }
+
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        const cmd = input.value.trim().toLowerCase()
+        terminal.innerHTML += '\n$ ' + cmd
+        if (commands[cmd]) {
+          if (cmd === 'clear') {
+            terminal.innerHTML = ''
+          } else {
+            terminal.innerHTML += '\n' + commands[cmd]
+          }
+        } else {
+          terminal.innerHTML += '\nunknown command'
+        }
+        input.value = ''
+        window.scrollTo(0, document.body.scrollHeight)
+      }
     })
   </script>
 </body>

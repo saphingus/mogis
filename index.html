@@ -3,60 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASCII Terminal</title>
+  <title>ASCII Website</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #161616;
-      color: #ffffff;
-      font-family: monospace;
-      font-size: 14px;
       height: 100%;
+      background-color: #161616; /* Dark grey background */
+      color: #ffffff;
+      font-family: 'Arial', sans-serif; /* Fat bold font */
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
       overflow: hidden;
     }
 
-    #terminal {
+    #content {
+      text-align: center;
       padding: 20px;
-      white-space: pre-wrap;
-      line-height: 1.4;
-    }
-
-    .prompt::after {
-      content: "_";
-      animation: blink 1s steps(2, start) infinite;
-      margin-left: 4px;
-    }
-
-    @keyframes blink {
-      to {
-        visibility: hidden;
-      }
+      width: 100%;
     }
 
     .ascii {
-      font-size: 18px;
+      font-size: 32px;
+      white-space: pre-wrap;
+      line-height: 1.4;
+      color: #00ff90; /* Neon green */
+      margin-bottom: 20px;
+    }
+
+    .header {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 2px;
       color: #ffffff;
+      margin-bottom: 20px;
     }
 
-    .command {
+    .subheader {
+      font-size: 18px;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    .links {
+      margin-top: 40px;
+    }
+
+    .links a {
+      text-decoration: none;
       color: #00ff90;
+      margin: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
-    .output {
+    .links a:hover {
       color: #ffffff;
     }
 
     .userbar {
-      margin-bottom: 10px;
-      color: #888;
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #00ff90;
     }
+
   </style>
 </head>
 <body>
-  <div id="terminal">
-    <div class="userbar">user@github</div>
-
+  <div id="content">
+    <!-- ASCII Art Header -->
     <div class="ascii">
       _<br>
      (_) <br>
@@ -67,13 +87,19 @@
                       ( ( __)) <br>
     </div>
 
-    <div><span class="command">whoami</span></div>
-    <div class="output">saph</div>
+    <!-- Header and Subheader -->
+    <div class="header">meow</div>
+    <div class="subheader">hello</div>
 
-    <div><span class="command">about</span></div>
-    <div class="output">simple, minimal, ascii-inspired terminal page</div>
+    <!-- User Bar -->
+    <div class="userbar">user@mogis ~</div>
 
-    <div><span class="prompt"></span></div>
+    <!-- Navigation Links -->
+    <div class="links">
+      <a href="#">projects</a>
+      <a href="#">about</a>
+      <a href="#">contact</a>
+    </div>
   </div>
 </body>
 </html>
